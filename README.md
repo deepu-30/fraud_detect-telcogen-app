@@ -48,7 +48,8 @@ step 10 : I have added I/O now for testing run the query..
 ![Screenshot from 2022-04-17 21-21-49](https://user-images.githubusercontent.com/80934348/163722193-57f065db-809f-44b7-875c-98ec4aa1ae58.png)
 
 step 11 :  all works fine! then go to overview pane in stream analytics then click start for real-time processing messages and notice the graph....
-
+NOTE - keep the app running.
+ 
 ![Screenshot from 2022-04-17 21-36-27](https://user-images.githubusercontent.com/80934348/163722814-7be261a8-2500-48d2-804d-408cea104f21.png)
 
 step 12 : Now go to storage account and click on containers>date>[..] > there you see the output...
