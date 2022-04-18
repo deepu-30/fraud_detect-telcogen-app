@@ -2,9 +2,7 @@
 
 Services I used for this project is Windows VM > eventHubs > azure-stream-analytics > stroage 
 
-Although this is my first time on github so I try my best to explain what I did with the help of azure services...
-With the help of Azure services I created a real time fraud detection in azure with the help of
-TelcoGenerate app works on windows so for that I created a windows VM as I'm the user of ubuntu, then after creating vm I set up a remote desktop connection(RDP) then inside vm I install a zip file of TelcoGenereator app then unzip it and then next further process I will tell you through steps :
+Although this is my first time on github so I try my best to explain what I did with the help of azure services...                                          I created a real time fraud detection in azure with the help of TelcoGenerate app which works on windows so for that I created a windows VM and then after creating a vm I set up a remote desktop connection(RDP) then inside vm I install a zip file of TelcoGenereator app then unzip it and then next, further process I will tell you through steps :
 
 step 1 : After extraction go to the file telcodatagen.exe.config open that file with text editor there you see the coloumn of add key name and connection string we will get that using event hubs...
 step 2 : I create a evenHub namespace called detect-events and in that I create event hub called input-events.
