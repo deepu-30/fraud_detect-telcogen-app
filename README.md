@@ -4,8 +4,8 @@ Services I used for this project is Windows VM > eventHubs > azure-stream-analyt
 
 Although this is my first time on github so I try my best to explain what I did with the help of azure services...                                          I created a real time fraud detection in azure with the help of TelcoGenerate app which works on windows so for that I created a windows VM and then after creating a vm I set up a remote desktop connection(RDP) then inside vm I install a zip file of TelcoGenereator app then unzip it and then next, further process I will tell you through steps :
 
-step 1 : After extraction go to the file telcodatagen.exe.config open that file with text editor there you see the coloumn of add key name and connection string we will get that using event hubs...
-step 2 : I create a evenHub namespace called detect-events and in that I create event hub called input-events.
+step 1 : After extraction go to the file telcodatagen.exe.config open that file with text editor there you see the coloumn of add key name and connection string we will get that using event hubs...                                                                                                                
+step 2 : I create a eventHub namespace called detect-events and in that I create event hub called input-events.
 
 ![Screenshot from 2022-04-17 19-43-00](https://user-images.githubusercontent.com/80934348/163718566-23b52c25-be3c-4252-b188-265c52e99c9c.png)
 
@@ -13,7 +13,7 @@ step 2 : click on input-events in that I create shared access policy and from th
 
 ![Screenshot from 2022-04-17 20-03-15](https://user-images.githubusercontent.com/80934348/163719231-92afed82-68b8-4ebb-aa55-4658da74a1fe.png)
 
-step 3 : add this connection string and eventhub name to telcodatagene.exe.conig by removing last entity-path including semicolon.
+step 3 : add this connection string and eventhub name to telcodatagene.exe.config by removing last entity-path including semicolon.
 
 ![Screenshot from 2022-04-17 19-32-41](https://user-images.githubusercontent.com/80934348/163719329-b9901823-6997-47fa-a5bf-15bd996f56c2.png)
 
@@ -21,7 +21,8 @@ step 4 : Now it's time to run the app, first copy the path for telcogenerator ap
 
 ![Screenshot from 2022-04-17 19-35-39](https://user-images.githubusercontent.com/80934348/163719455-44aa79c3-ea6f-4586-8a5f-5965d884823f.png)
 
-step 5 : now finally run the app through the command which takes following parameter i.e, number of calls per hour, % of fraud probablitiy and the num of hours
+step 5 : now finally run the app through the command which takes following parameter i.e, number of calls per hour, % of fraud probablitiy and the num of hours.
+
 cmd :   .\telcodatagen.exe 1000 0.2 2  
  
 ![Screenshot from 2022-04-17 19-36-28](https://user-images.githubusercontent.com/80934348/163719772-2a26ed41-f007-4086-bb4a-24927ea114ad.png)
@@ -29,11 +30,12 @@ cmd :   .\telcodatagen.exe 1000 0.2 2
 step 6 : Now your app is running and sending data to eventhubs. Now it's time to create Stream Analytics job to process the event messages. I created the stream analytics naming > process-events-message.
 
 step 7 : Here, we need two things in stream analytics first input via eventhubs and output via blobstorage though there are many other option for i/o services.
+
 step 8 : click on add input and select event Hub it will automatically detect your eventHub name than create it..
 
 ![Screenshot from 2022-04-17 21-44-51](https://user-images.githubusercontent.com/80934348/163723134-909a9589-bdde-4916-95de-a48fa086fbd1.png)
 
-step 9 : Now add output for that you have to create storage account in azure and add the container for saving the data coming from azure stream analytics and specify in stream analytics and it will detect the container name and select create...
+step 9 : Now add output for that you have to create storage account in azure and add the container for saving the data coming from azure stream analytics and specify the output in stream analytics and it will automatically detect the container name and select create...
 
 storage-account with container
 ![Screenshot from 2022-04-17 21-07-11](https://user-images.githubusercontent.com/80934348/163722009-4de5d734-ca08-4197-8b3d-1e2c9ad9ffbe.png)
@@ -41,7 +43,7 @@ storage-account with container
 Adding output in stream-analytics
 ![Screenshot from 2022-04-17 21-44-24](https://user-images.githubusercontent.com/80934348/163723172-bfb9fc11-cbd5-4034-9d4f-e4e6ca676cbe.png)
 
-step 10 : I have added I/O now for testing run the query..
+step 10 : I have added I/O now for testing and now run the query..
 
 ![Screenshot from 2022-04-17 21-21-49](https://user-images.githubusercontent.com/80934348/163722193-57f065db-809f-44b7-875c-98ec4aa1ae58.png)
 
