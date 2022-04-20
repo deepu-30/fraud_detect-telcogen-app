@@ -1,6 +1,6 @@
 # Detecting real time mobile-calls fraud with TelcoGenerator App
 
-Services I used for this project is Windows VM > eventHubs > azure-stream-analytics > stroage 
+Services I used for this project is Windows VM > eventHubs > azure-stream-analytics > storage 
 
 Although this is my first time on github so I try my best to explain what I did with the help of azure services...                                          I created a real time fraud detection in azure with the help of TelcoGenerate app which works on windows so for that I created a windows VM and then after creating a vm I set up a remote desktop connection(RDP) then inside vm I install a zip file of TelcoGenereator app then unzip it and then next, further process I will tell you through steps :
 
